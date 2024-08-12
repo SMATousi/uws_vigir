@@ -1,5 +1,6 @@
 # Universalizing Weak Supervision 
 
+### This is a ViGIR implementation
 ![framework](assets/uws_figure.png)
 
 This is the source code for our ICLR 2022 paper: [Universalizing Weak Supervision](https://arxiv.org/pdf/2112.03865.pdf) by Changho Shin, Winfred Li, Harit Vishwakarma, Nicholas Roberts, and Frederic Sala. We propose a universal technique that enables weak supervision over any label type while still offering desirable properties, including practicalflexibility, computational efficiency, and theoretical guarantees.

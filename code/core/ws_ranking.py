@@ -216,6 +216,13 @@ class WeakSupRanking:
             else:
                 Y_tilde = [self.r_utils.weighted_kemeny(L[i][:k], self.thetas[:k], lst_D[i][:k,:k])
                            for i in range(n)]
+        
+        elif conf['inference_rule'] == 'weighted_kemeny_TDDK':
+            if lst_D is None:
+                Y_tilde = [self.r_utils.weighted_kemeny_TDDK(L[i][:k], self.thetas[:k]) for i in range(n)]
+            else:
+                Y_tilde = [self.r_utils.weighted_kemeny_TDDK(L[i][:k], self.thetas[:k], lst_D[i][:k,:k])
+                           for i in range(n)]
 
         # label inference based on pairwise majority
         elif conf['inference_rule'] == 'pairwise_majority':

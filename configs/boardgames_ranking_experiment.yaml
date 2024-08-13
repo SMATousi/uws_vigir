@@ -30,7 +30,7 @@ project_root: ../../
 results_path: tmp/results/boardgames/default
 weak_sup_conf:
   p: null
-  num_LFs: 3
+  num_LFs: 10
   checkpoint_path: data/boardgames/processed/default/LFs
   inference_rule: weighted_kemeny
   lf_features: ["owned"]

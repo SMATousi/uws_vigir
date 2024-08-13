@@ -341,6 +341,37 @@ class RankingUtils:
         mu = D_th.mean(axis=1)
         idx = np.argmin(mu)
         return lstRanks[idx]
+    
+    def weighted_kemeny_TDDK(self, lstRanks, weights, D=None):
+        """
+        weighted kenemy ranking
+        Parameters
+        ----------
+        lstRanks
+        weights
+        D
+
+        Returns
+        -------
+
+        """
+
+        print("I am using the TDDK Ranking version!")
+        epsilon = 1e-6
+        if D is None:
+            D = self.get_pair_wise_dists(lstRanks)
+        
+        reverse_D = 1 - D
+        TDDK_factors = 1/(weights + epsilon)
+
+        D_th = np.dot(D, np.diag(weights))
+        reverse_D_th = np.dot(reverse_D, np.diag(TDDK_factors))
+
+        Final_D = D_th + reverse_D_th
+
+        mu = Final_D.mean(axis=1)
+        idx = np.argmin(mu)
+        return lstRanks[idx]
 
     def mean_kt_distance(self, Y1, Y2, normalize=True):
         """

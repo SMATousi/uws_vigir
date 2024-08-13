@@ -356,7 +356,7 @@ class RankingUtils:
 
         """
 
-        print("I am using the TDDK Ranking version!")
+        # print("I am using the TDDK Ranking version!")
         epsilon = 1e-6
         if D is None:
             D = self.get_pair_wise_dists(lstRanks)

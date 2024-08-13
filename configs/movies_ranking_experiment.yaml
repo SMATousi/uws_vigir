@@ -233,7 +233,7 @@ project_root: ../../
 results_path: tmp/results/movies
 weak_sup_conf:
   checkpoint_path: data/processed/movies_example/LFs
-  inference_rule: weighted_kemeny
+  inference_rule: weighted_kemeny_TDDK
   lf_features:
   - revenue
   - gross
@@ -255,7 +255,7 @@ weak_sup_conf:
   - true
   - true
   - true
-  num_LFs: 3
+  num_LFs: 10
   p: null
   recreate_if_exists: true
   seed: 0

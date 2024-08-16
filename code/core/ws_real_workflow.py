@@ -17,8 +17,8 @@ WEAK_LABEL_FILE_NAME  = 'weak_labels.pkl'
 SYNTHETIC_WEAK_LABEL_FILE_NAME = 'synthetic_weak_labels.pkl'
 
 def generate_synthetic_LFs(Y, m, seed, good_ratio=1/3, p=None,
-                           good_min_theta=2, good_max_theta=5,
-                           bad_min_theta=0.001, bad_max_theta=0.01):
+                           good_min_theta=0.01, good_max_theta=0.011,
+                           bad_min_theta=0.001, bad_max_theta=0.0011):
     """
 
     Parameters
@@ -32,6 +32,8 @@ def generate_synthetic_LFs(Y, m, seed, good_ratio=1/3, p=None,
     Returns
     -------
     """
+    print(good_min_theta, good_max_theta)
+    print(bad_min_theta, bad_max_theta)
     assert len(Y) != 0, "True label Y is empty"
     if seed is not None:
         np.random.seed(seed)
@@ -116,6 +118,7 @@ def get_weak_labels(dataset, weak_sup_conf, root_path='.'):
 
         # generate weak labels
         if weak_sup_conf.get('synthetic') is True:
+            print("^^^^^^^^^^^^^^^^^^^^^Synthetic^^^^^^^^^^^^^^^^^^^^^^")
             if weak_sup_conf.get('good_max_theta') is not None:
                 # Assume there is one, all exist together
                 good_max_theta = weak_sup_conf.get('good_max_theta')

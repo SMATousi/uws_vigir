@@ -29,6 +29,7 @@ log_file: tmp/logs/boardgames_default.log
 project_root: ../../
 results_path: tmp/results/boardgames/default
 weak_sup_conf:
+  seed: 0
   p: null
   num_LFs: 10
   checkpoint_path: data/boardgames/processed/default/LFs

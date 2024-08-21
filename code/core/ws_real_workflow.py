@@ -17,8 +17,8 @@ WEAK_LABEL_FILE_NAME  = 'weak_labels.pkl'
 SYNTHETIC_WEAK_LABEL_FILE_NAME = 'synthetic_weak_labels.pkl'
 
 def generate_synthetic_LFs(Y, m, seed, good_ratio=1/3, p=None,
-                           good_min_theta=0.01, good_max_theta=0.011,
-                           bad_min_theta=0.001, bad_max_theta=0.0011):
+                           good_min_theta=0.2, good_max_theta=1.0,
+                           bad_min_theta=0.001, bad_max_theta=0.01):
     """
 
     Parameters
